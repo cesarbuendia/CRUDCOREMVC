@@ -24,7 +24,7 @@ namespace CRUDCOREMVC.Controllers
 
         public IActionResult Guardar() 
         {            
-            // solo devuelve la lista
+            // solo devuelve la vista
             return View();
         }
 
@@ -45,6 +45,34 @@ namespace CRUDCOREMVC.Controllers
             else
                 return View();
         }
+
+
+
+        public IActionResult Editar(int IdContacto)
+        {
+            // solo devuelve la vista
+            var ocontacto = _ContactoDatos.Obtener(IdContacto);
+            return View(ocontacto);
+        }
+
+
+
+        [HttpPost]
+        public IActionResult Editar(ContactoModel oContacto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var respuesta = _ContactoDatos.Editar(oContacto);
+
+            if (respuesta)
+                return RedirectToAction("Listar");
+            else
+                return View();
+        }
+
 
 
     }
