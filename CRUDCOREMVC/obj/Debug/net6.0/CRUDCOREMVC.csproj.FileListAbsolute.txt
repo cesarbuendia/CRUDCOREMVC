@@ -568,3 +568,4 @@ C:\Users\ce-ar\source\repos\CRUDCOREMVC\CRUDCOREMVC\obj\Debug\net6.0\refint\CRUD
 C:\Users\ce-ar\source\repos\CRUDCOREMVC\CRUDCOREMVC\obj\Debug\net6.0\CRUDCOREMVC.pdb
 C:\Users\ce-ar\source\repos\CRUDCOREMVC\CRUDCOREMVC\obj\Debug\net6.0\CRUDCOREMVC.genruntimeconfig.cache
 C:\Users\ce-ar\source\repos\CRUDCOREMVC\CRUDCOREMVC\obj\Debug\net6.0\ref\CRUDCOREMVC.dll
+C:\Users\ce-ar\source\repos\CRUDCOREMVC\CRUDCOREMVC\bin\Debug\net6.0\VisualStudioGitIgnore.dll

@@ -74,6 +74,28 @@ namespace CRUDCOREMVC.Controllers
         }
 
 
+        public IActionResult Eliminar(int IdContacto)
+        {
+            // solo devuelve la vista
+            var ocontacto = _ContactoDatos.Obtener(IdContacto);
+            return View(ocontacto);
+        }
+
+
+
+        [HttpPost]
+        public IActionResult Eliminar(ContactoModel oContacto)
+        {
+
+            var respuesta = _ContactoDatos.Eliminar(oContacto.IdContacto);
+
+            if (respuesta)
+                return RedirectToAction("Listar");
+            else
+                return View();
+        }
+
+
 
     }
 }
