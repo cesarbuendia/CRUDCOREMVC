@@ -1,0 +1,64 @@
+create database DBCRUDCORE
+
+
+USE DBCRUDCORE
+
+CREATE TABLE CONTACTO(
+    IdContacto int IDENTITY PRIMARY KEY,
+    Nombre VARCHAR(50),
+    Telefono VARCHAR(50),
+    Correo VARCHAR(50)
+)
+
+
+
+CREATE PROCEDURE sp_Listar as 
+BEGIN
+    SELECT * FROM CONTACTO
+END
+
+
+CREATE PROCEDURE sp_Obtener(
+    @IdContacto INT
+) 
+as 
+BEGIN
+    SELECT * FROM CONTACTO WHERE IdContacto = @IdContacto
+END
+
+
+CREATE PROCEDURE sp_Guardar(
+    @Nombre VARCHAR(100),
+    @Telefono VARCHAR(100),
+    @Correo VARCHAR(100)
+) 
+as 
+BEGIN
+    insert into CONTACTO(Nombre, Telefono, Correo) VALUES (@Nombre,@Telefono,@Correo)
+END
+
+
+CREATE PROCEDURE sp_Editar(
+    @IdContacto INT,
+    @Nombre VARCHAR(100),
+    @Telefono VARCHAR(100),
+    @Correo VARCHAR(100)
+)
+AS
+BEGIN
+    UPDATE CONTACTO set Nombre=@Nombre, Telefono=@Telefono, Correo=@Correo WHERE IdContacto=@IdContacto
+END
+
+
+CREATE PROCEDURE sp_Eliminar(
+    @IdContacto INT
+)
+AS
+BEGIN
+    
+    DELETE FROM [CONTACTO]
+    WHERE IdContacto=@IdContacto
+END
+
+
+  
